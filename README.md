@@ -173,3 +173,33 @@ npm run dev
 Ansh Saini
 
 Inventory Pro – Inventory & Order Management System
+
+## Application Screenshots
+
+### Dashboard
+
+![Dashboard](./frontend/public/screenshots/Dashboard.png)
+
+### Products
+
+![Products](./frontend/public/screenshots/Products.png)
+
+### Customers
+
+![Customers](./frontend/public/screenshots/Customers.png)
+
+### Orders
+
+![Orders](./frontend/public/screenshots/Orders.png)
+
+### Inventory
+
+![Inventory](./frontend/public/screenshots/Inventory.png)
+
+### Profile
+
+![Profile](./frontend/public/screenshots/Prrofile.png)
+
+### Settings
+
+![Settings](./frontend/public/screenshots/Settings.png)
