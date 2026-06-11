@@ -203,3 +203,92 @@ Inventory Pro – Inventory & Order Management System
 ### Settings
 
 ![Settings](./frontend/public/screenshots/Settings.png)
+
+# Inventory Pro
+
+A modern SaaS-style Inventory & Order Management System built using React, TypeScript, Express.js, MongoDB, and Tailwind CSS.
+
+## Live Demo
+
+### Frontend Application (Vercel)
+
+https://inventory-order-management-system-inky-kappa.vercel.app
+
+### Backend API (Render)
+
+https://inventory-order-management-system-9buf.onrender.com
+
+### GitHub Repository
+
+https://github.com/sainiansh3004/inventory-order-management-system
+
+### Docker Hub Backend Image
+
+https://hub.docker.com/r/sainiansh3004/inventory-backend
+
+
+## Docker Setup
+
+### Pull Docker Image
+
+```bash
+docker pull sainiansh3004/inventory-backend
+```
+
+### Run Docker Container
+
+```bash
+docker run -p 5001:5001 sainiansh3004/inventory-backend
+```
+
+---
+
+## Overview
+
+Inventory Pro helps businesses efficiently manage:
+
+* Products
+* Customers
+* Orders
+* Revenue
+* Inventory Levels
+
+The system provides real-time analytics through an interactive dashboard.
+
+---
+
+## Features
+
+### Dashboard
+
+* Total Products
+* Total Customers
+* Total Orders
+* Revenue Analytics
+* Inventory Status
+* Low Stock Alerts
+
+### Product Management
+
+* Add Products
+* View Products
+* Inventory Tracking
+* Stock Monitoring
+
+### Customer Management
+
+* Add Customers
+* View Customer Details
+* Manage Customer Records
+
+### Order Management
+
+* Create Orders
+* Track Orders
+* Revenue Calculation
+* Automatic Inventory Update
+
+### Inventory Monitoring
+
+* Low Stock Detection
+* Real-Time Quantity Updates
