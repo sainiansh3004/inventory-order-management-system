@@ -1,117 +1,84 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
 import DashboardLayout from "../components/layout/DashboardLayout";
+import { getOrders } from "../services/orderService";
 
 export default function Orders() {
   const [orders, setOrders] = useState<any[]>([]);
 
   useEffect(() => {
-    fetchOrders();
+    loadOrders();
   }, []);
 
-  const fetchOrders = async () => {
+  const loadOrders = async () => {
     try {
-      const res = await axios.get(
-        "http://localhost:5001/api/orders"
-      );
+      const data = await getOrders();
 
-      setOrders(res.data);
+      console.log("Orders API:", data);
+
+      setOrders(data || []);
     } catch (error) {
-      console.log(error);
+      console.error("Error fetching orders:", error);
     }
   };
 
   return (
     <DashboardLayout title="Orders">
-      <div>
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+        <h2 className="text-xl text-white font-semibold mb-6">
+          Orders List
+        </h2>
 
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-5xl font-bold text-white">
-              Orders
-            </h1>
+        <table className="w-full">
+          <thead>
+            <tr className="border-b border-slate-800">
+              <th className="text-left py-3 text-slate-400">
+                Customer
+              </th>
 
-            <p className="text-slate-400 mt-2">
-              Manage customer orders
-            </p>
-          </div>
+              <th className="text-left py-3 text-slate-400">
+                Amount
+              </th>
 
-          <div className="bg-green-600 text-white px-5 py-3 rounded-2xl font-semibold">
-            {orders.length} Orders
-          </div>
-        </div>
+              <th className="text-left py-3 text-slate-400">
+                Status
+              </th>
+            </tr>
+          </thead>
 
-        <div className="mt-8 bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden">
-
-          <table className="w-full">
-
-            <thead>
-              <tr className="border-b border-slate-800">
-
-                <th className="p-4 text-left text-slate-400">
-                  Customer
-                </th>
-
-                <th className="p-4 text-left text-slate-400">
-                  Product
-                </th>
-
-                <th className="p-4 text-left text-slate-400">
-                  Quantity
-                </th>
-
-                <th className="p-4 text-left text-slate-400">
-                  Amount
-                </th>
-
-                <th className="p-4 text-left text-slate-400">
-                  Status
-                </th>
-
-              </tr>
-            </thead>
-
-            <tbody>
-
-              {orders.map((order) => (
+          <tbody>
+            {orders.length > 0 ? (
+              orders.map((order: any) => (
                 <tr
                   key={order._id}
-                  className="border-b border-slate-800 hover:bg-slate-800/40"
+                  className="border-b border-slate-800"
                 >
-
-                  <td className="p-4 text-white">
-                    {order.customer?.name}
+                  <td className="py-4 text-white">
+                    {order.customer?.name || "N/A"}
                   </td>
 
-                  <td className="p-4 text-white">
-                    {order.items?.[0]?.product?.name}
-                  </td>
-
-                  <td className="p-4 text-white">
-                    {order.items?.[0]?.quantity}
-                  </td>
-
-                  <td className="p-4 text-green-400 font-semibold">
+                  <td className="py-4 text-green-400">
                     ₹{order.totalAmount}
                   </td>
 
-                  <td className="p-4">
-
-                    <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm">
+                  <td className="py-4">
+                    <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">
                       {order.status}
                     </span>
-
                   </td>
-
                 </tr>
-              ))}
-
-            </tbody>
-
-          </table>
-
-        </div>
-
+              ))
+            ) : (
+              <tr>
+                <td
+                  colSpan={3}
+                  className="py-6 text-center text-slate-400"
+                >
+                  No Orders Found
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
       </div>
     </DashboardLayout>
   );
