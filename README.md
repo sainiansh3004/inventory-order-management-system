@@ -284,7 +284,7 @@ npm run dev
 
 | Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend
 
-| GitHub Repository | https://github.com/sainiansh3004/inventory-order-management-system |
+| GitHub Repository | https://github.com/sainiansh3004/inventory-order-management-system
 
 ---
 
