@@ -2,6 +2,54 @@
 
 A modern SaaS-style Inventory & Order Management System built using React, TypeScript, Express.js, MongoDB, and Tailwind CSS.
 
+## Live Demo
+
+### Frontend Application (Vercel)
+
+https://inventory-order-management-system-inky-kappa.vercel.app
+
+### Backend API (Render)
+
+https://inventory-order-management-system-9buf.onrender.com
+
+### GitHub Repository
+
+https://github.com/sainiansh3004/inventory-order-management-system
+
+### Docker Hub Backend Image
+
+https://hub.docker.com/r/sainiansh3004/inventory-backend
+
+---
+
+## Docker Setup
+
+### Pull Docker Image
+
+```bash
+docker pull sainiansh3004/inventory-backend:latest
+```
+
+### Run Docker Container
+
+```bash
+docker run -p 5001:5001 sainiansh3004/inventory-backend:latest
+```
+
+### Verify
+
+Open:
+
+http://localhost:5001
+
+Expected Response:
+
+```text
+Inventory API Running
+```
+
+---
+
 ## Overview
 
 Inventory Pro helps businesses efficiently manage:
@@ -74,45 +122,43 @@ The system provides real-time analytics through an interactive dashboard.
 * MongoDB
 * Mongoose
 
+### Deployment
+
+* Vercel
+* Render
+* Docker Hub
+
 ---
 
 ## Project Structure
 
+```text
 inventory-order-management-system
 
 ├── backend
-
-│ ├── controllers
-
-│ ├── models
-
-│ ├── routes
-
-│ └── server.js
-
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── middleware
+│   └── server.js
 │
-
 ├── frontend
-
-│ ├── src
-
-│ │ ├── components
-
-│ │ ├── pages
-
-│ │ ├── services
-
-│ │ └── App.tsx
-
+│   ├── src
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.tsx
 │
-
-└── README.md
+├── README.md
+├── package.json
+└── package-lock.json
+```
 
 ---
 
 ## Installation
 
-### Backend
+### Backend Setup
 
 ```bash
 cd backend
@@ -120,7 +166,7 @@ npm install
 node server.js
 ```
 
-### Frontend
+### Frontend Setup
 
 ```bash
 cd frontend
@@ -130,7 +176,7 @@ npm run dev
 
 ---
 
-##  API Endpoints
+## API Endpoints
 
 ### Products
 
@@ -143,6 +189,8 @@ npm run dev
 
 * GET /api/customers
 * POST /api/customers
+* PUT /api/customers/:id
+* DELETE /api/customers/:id
 
 ### Orders
 
@@ -155,7 +203,7 @@ npm run dev
 
 ---
 
-##  Implemented Features
+## Implemented Features
 
 * Dashboard Analytics
 * Product Management
@@ -165,14 +213,18 @@ npm run dev
 * Inventory Tracking
 * MongoDB Integration
 * Responsive SaaS Dashboard UI
+* Dockerized Backend
+* Cloud Deployment
 
 ---
 
-##  Author
+## Author
 
-Ansh Saini
+**Ansh Saini**
 
 Inventory Pro – Inventory & Order Management System
+
+---
 
 ## Application Screenshots
 
@@ -204,91 +256,19 @@ Inventory Pro – Inventory & Order Management System
 
 ![Settings](./frontend/public/screenshots/Settings.png)
 
-# Inventory Pro
+---
 
-A modern SaaS-style Inventory & Order Management System built using React, TypeScript, Express.js, MongoDB, and Tailwind CSS.
+## Deployment Resources
 
-## Live Demo
-
-### Frontend Application (Vercel)
-
-https://inventory-order-management-system-inky-kappa.vercel.app
-
-### Backend API (Render)
-
-https://inventory-order-management-system-9buf.onrender.com
-
-### GitHub Repository
-
-https://github.com/sainiansh3004/inventory-order-management-system
-
-### Docker Hub Backend Image
-
-https://hub.docker.com/r/sainiansh3004/inventory-backend
-
-
-## Docker Setup
-
-### Pull Docker Image
-
-```bash
-docker pull sainiansh3004/inventory-backend
-```
-
-### Run Docker Container
-
-```bash
-docker run -p 5001:5001 sainiansh3004/inventory-backend
-```
+| Resource          | Link                                                               |
+| ----------------- | ------------------------------------------------------------------ |
+| Frontend (Vercel) | https://inventory-order-management-system-inky-kappa.vercel.app    |
+| Backend (Render)  | https://inventory-order-management-system-9buf.onrender.com        |
+| Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend           |
+| GitHub Repository | https://github.com/sainiansh3004/inventory-order-management-system |
 
 ---
 
-## Overview
+## License
 
-Inventory Pro helps businesses efficiently manage:
-
-* Products
-* Customers
-* Orders
-* Revenue
-* Inventory Levels
-
-The system provides real-time analytics through an interactive dashboard.
-
----
-
-## Features
-
-### Dashboard
-
-* Total Products
-* Total Customers
-* Total Orders
-* Revenue Analytics
-* Inventory Status
-* Low Stock Alerts
-
-### Product Management
-
-* Add Products
-* View Products
-* Inventory Tracking
-* Stock Monitoring
-
-### Customer Management
-
-* Add Customers
-* View Customer Details
-* Manage Customer Records
-
-### Order Management
-
-* Create Orders
-* Track Orders
-* Revenue Calculation
-* Automatic Inventory Update
-
-### Inventory Monitoring
-
-* Low Stock Detection
-* Real-Time Quantity Updates
+This project is developed for educational, learning, and assessment purposes.
