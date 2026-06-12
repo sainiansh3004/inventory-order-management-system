@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API =
-  "http://localhost:5001/api/customers";
+  "https://inventory-order-management-system-9buf.onrender.com/api/customers";
 
 export const getCustomers = async () => {
   const res = await axios.get(API);
