@@ -278,9 +278,12 @@ npm run dev
 
 ## Deployment Resources
 
-| Frontend (Vercel) | https://inventory-order-management-system-inky-kappa.vercel.app    |
-| Backend (Render)  | https://inventory-order-management-system-9buf.onrender.com        |
-| Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend           |
+| Frontend (Vercel) | https://inventory-order-management-system-inky-kappa.vercel.app
+
+| Backend (Render)  | https://inventory-order-management-system-9buf.onrender.com
+
+| Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend
+
 | GitHub Repository | https://github.com/sainiansh3004/inventory-order-management-system |
 
 ---
