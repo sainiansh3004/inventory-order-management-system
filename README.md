@@ -1,6 +1,17 @@
 # Inventory Pro
 
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-blue?logo=typescript)
+![Node.js](https://img.shields.io/badge/Node.js-green?logo=node.js)
+![Express](https://img.shields.io/badge/Express-black?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-green?logo=mongodb)
+![Docker](https://img.shields.io/badge/Docker-blue?logo=docker)
+![Vercel](https://img.shields.io/badge/Vercel-black?logo=vercel)
+![Render](https://img.shields.io/badge/Render-purple)
+
 A modern SaaS-style Inventory & Order Management System built using React, TypeScript, Express.js, MongoDB, and Tailwind CSS.
+
+---
 
 ## Live Demo
 
@@ -40,7 +51,9 @@ docker run -p 5001:5001 sainiansh3004/inventory-backend:latest
 
 Open:
 
+```text
 http://localhost:5001
+```
 
 Expected Response:
 
@@ -203,29 +216,6 @@ npm run dev
 
 ---
 
-## Implemented Features
-
-* Dashboard Analytics
-* Product Management
-* Customer Management
-* Order Management
-* Revenue Tracking
-* Inventory Tracking
-* MongoDB Integration
-* Responsive SaaS Dashboard UI
-* Dockerized Backend
-* Cloud Deployment
-
----
-
-## Author
-
-**Ansh Saini**
-
-Inventory Pro – Inventory & Order Management System
-
----
-
 ## Application Screenshots
 
 ### Dashboard
@@ -258,10 +248,36 @@ Inventory Pro – Inventory & Order Management System
 
 ---
 
+## Implemented Features
+
+* Dashboard Analytics
+* Product Management
+* Customer Management
+* Order Management
+* Revenue Tracking
+* Inventory Tracking
+* MongoDB Integration
+* Responsive SaaS Dashboard UI
+* Dockerized Backend
+* Cloud Deployment
+
+---
+
+## Future Enhancements
+
+* User Authentication & Authorization
+* Role-Based Access Control
+* PDF Invoice Generation
+* Excel Report Export
+* Email Notifications
+* AI-Based Inventory Forecasting
+* Multi-Warehouse Management
+* Advanced Business Analytics
+
+---
+
 ## Deployment Resources
 
-| Resource          | Link                                                               |
-| ----------------- | ------------------------------------------------------------------ |
 | Frontend (Vercel) | https://inventory-order-management-system-inky-kappa.vercel.app    |
 | Backend (Render)  | https://inventory-order-management-system-9buf.onrender.com        |
 | Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend           |
@@ -269,6 +285,14 @@ Inventory Pro – Inventory & Order Management System
 
 ---
 
+## Author
+
+**Ansh Saini**
+
+Inventory Pro – Full Stack Inventory & Order Management System
+
+---
+
 ## License
 
-This project is developed for educational, learning, and assessment purposes.
+This project is developed for educational, learning, portfolio, and technical assessment purposes.
