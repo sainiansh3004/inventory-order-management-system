@@ -26,14 +26,26 @@ export default function Orders() {
 }, []);
 
 const loadOrders = async () => {
+  const cachedOrders = sessionStorage.getItem("orders");
+  const cachedCustomers = sessionStorage.getItem("customers");
+
+  if (cachedOrders && cachedCustomers) {
+    setOrders(JSON.parse(cachedOrders));
+    setCustomers(JSON.parse(cachedCustomers));
+    return;
+  }
+
   try {
     const [orderRes, customerRes] = await Promise.all([
       getOrders(),
       getCustomers(),
     ]);
 
-    setOrders(orderRes || []);
-    setCustomers(customerRes || []);
+    setOrders(orderRes);
+    setCustomers(customerRes);
+
+    sessionStorage.setItem("orders", JSON.stringify(orderRes));
+    sessionStorage.setItem("customers", JSON.stringify(customerRes));
   } catch (error) {
     console.error(error);
   }

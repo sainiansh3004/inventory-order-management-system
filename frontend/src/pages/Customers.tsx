@@ -25,13 +25,21 @@ export default function Customers() {
   }, []);
 
   const loadCustomers = async () => {
-    try {
-      const data = await getCustomers();
-      setCustomers(data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const cached = sessionStorage.getItem("customers");
+
+  if (cached) {
+    setCustomers(JSON.parse(cached));
+    return;
+  }
+
+  try {
+    const data = await getCustomers();
+    setCustomers(data);
+    sessionStorage.setItem("customers", JSON.stringify(data));
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   const handleAddCustomer = async () => {
     if (
@@ -78,11 +86,13 @@ export default function Customers() {
     }
   };
 
-  const filteredCustomers = customers.filter(
-    (customer) =>
-      customer.name?.toLowerCase().includes(search.toLowerCase()) ||
-      customer.email?.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredCustomers = Array.isArray(customers)
+  ? customers.filter(
+      (customer) =>
+        customer.name?.toLowerCase().includes(search.toLowerCase()) ||
+        customer.email?.toLowerCase().includes(search.toLowerCase())
+    )
+  : [];
 
   return (
     <DashboardLayout title="Customers">

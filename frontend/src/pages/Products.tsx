@@ -12,13 +12,21 @@ export default function Products() {
   }, []);
 
   const loadProducts = async () => {
-    try {
-      const data = await getProducts();
-      setProducts(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const cached = sessionStorage.getItem("products");
+
+  if (cached) {
+    setProducts(JSON.parse(cached));
+    return;
+  }
+
+  try {
+    const data = await getProducts();
+    setProducts(data);
+    sessionStorage.setItem("products", JSON.stringify(data));
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   const filteredProducts = products.filter(
     (product) =>

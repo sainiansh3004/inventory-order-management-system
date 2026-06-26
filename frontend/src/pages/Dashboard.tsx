@@ -30,20 +30,30 @@ export default function Dashboard() {
   }, []);
 
   const loadStats = async () => {
-    try {
-      const data = await getDashboardStats();
+  const cached = sessionStorage.getItem("dashboard");
 
-      setStats({
-        products: data.products || 0,
-        customers: data.customers || 0,
-        orders: data.orders || 0,
-        revenue: data.revenue || 0,
-        lowStockProducts: data.lowStockProducts || 0,
-      });
-    } catch (error) {
-      console.error("Dashboard Error:", error);
-    }
-  };
+  if (cached) {
+    setStats(JSON.parse(cached));
+    return;
+  }
+
+  try {
+    const data = await getDashboardStats();
+
+    const stats = {
+      products: data.products || 0,
+      customers: data.customers || 0,
+      orders: data.orders || 0,
+      revenue: data.revenue || 0,
+      lowStockProducts: data.lowStockProducts || 0,
+    };
+
+    setStats(stats);
+    sessionStorage.setItem("dashboard", JSON.stringify(stats));
+  } catch (error) {
+    console.error(error);
+  }
+};
 
   return (
     <DashboardLayout title="Dashboard">
