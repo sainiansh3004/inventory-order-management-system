@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5001/api/customers";
-// If you're using your deployed backend, replace the URL above with your Render URL.
+const API_URL =
+  "https://inventory-order-management-system-9buf.onrender.com/api/customers";
 
 export const getCustomers = async () => {
   const response = await axios.get(API_URL);
-  return response.data;
+  return response.data.data;
 };
 
 export const createCustomer = async (customer: any) => {

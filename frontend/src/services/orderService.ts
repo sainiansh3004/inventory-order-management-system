@@ -1,12 +1,11 @@
-
 import axios from "axios";
 
-// Local Backend
-const API_URL = "http://localhost:5001/api/orders";
+const API_URL =
+  "https://inventory-order-management-system-9buf.onrender.com/api/orders";
 
 export const getOrders = async () => {
   const response = await axios.get(API_URL);
-  return response.data;
+  return response.data.data;
 };
 
 export const createOrder = async (order: any) => {
