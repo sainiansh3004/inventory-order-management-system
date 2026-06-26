@@ -1,19 +1,19 @@
 const Customer = require("../models/customer");
 
-// GET ALL CUSTOMERS
+// Get all customers
 const getCustomers = async (req, res) => {
   try {
-    const customers = await Customer.find();
-
-    res.json(customers);
+    const customers = await Customer.find().sort({ createdAt: -1 });
+    res.status(200).json(customers);
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: "Failed to fetch customers",
+      error: error.message,
     });
   }
 };
 
-// GET SINGLE CUSTOMER
+// Get customer by ID
 const getCustomerById = async (req, res) => {
   try {
     const customer = await Customer.findById(req.params.id);
@@ -24,28 +24,29 @@ const getCustomerById = async (req, res) => {
       });
     }
 
-    res.json(customer);
+    res.status(200).json(customer);
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: "Failed to fetch customer",
+      error: error.message,
     });
   }
 };
 
-// CREATE CUSTOMER
+// Create customer
 const createCustomer = async (req, res) => {
   try {
     const customer = await Customer.create(req.body);
-
     res.status(201).json(customer);
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: "Failed to create customer",
+      error: error.message,
     });
   }
 };
 
-// UPDATE CUSTOMER
+// Update customer
 const updateCustomer = async (req, res) => {
   try {
     const customer = await Customer.findByIdAndUpdate(
@@ -53,6 +54,7 @@ const updateCustomer = async (req, res) => {
       req.body,
       {
         new: true,
+        runValidators: true,
       }
     );
 
@@ -62,18 +64,19 @@ const updateCustomer = async (req, res) => {
       });
     }
 
-    res.json(customer);
+    res.status(200).json(customer);
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: "Failed to update customer",
+      error: error.message,
     });
   }
 };
 
-// DELETE CUSTOMER
+// Delete customer
 const deleteCustomer = async (req, res) => {
   try {
-    const customer = await Customer.findByIdAndDelete(req.params.id);
+    const customer = await Customer.findById(req.params.id);
 
     if (!customer) {
       return res.status(404).json({
@@ -81,12 +84,15 @@ const deleteCustomer = async (req, res) => {
       });
     }
 
-    res.json({
+    await Customer.findByIdAndDelete(req.params.id);
+
+    res.status(200).json({
       message: "Customer deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
-      message: error.message,
+      message: "Failed to delete customer",
+      error: error.message,
     });
   }
 };
