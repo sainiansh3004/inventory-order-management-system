@@ -1,30 +1,19 @@
 import axios from "axios";
 
-const API =
-  "https://inventory-order-management-system-9buf.onrender.com/api/customers";
+const API_URL = "http://localhost:5001/api/customers";
+// If you're using your deployed backend, replace the URL above with your Render URL.
 
 export const getCustomers = async () => {
-  const res = await axios.get(API);
-  return res.data;
+  const response = await axios.get(API_URL);
+  return response.data;
 };
 
-export const createCustomer = async (
-  customer: any
-) => {
-  const res = await axios.post(
-    API,
-    customer
-  );
-
-  return res.data;
+export const createCustomer = async (customer: any) => {
+  const response = await axios.post(API_URL, customer);
+  return response.data;
 };
 
-export const deleteCustomer = async (
-  id: string
-) => {
-  const res = await axios.delete(
-    `${API}/${id}`
-  );
-
-  return res.data;
+export const deleteCustomer = async (id: string) => {
+  const response = await axios.delete(`${API_URL}/${id}`);
+  return response.data;
 };

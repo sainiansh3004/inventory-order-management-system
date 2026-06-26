@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL =
-  "https://inventory-order-management-system-9buf.onrender.com/api/products";
+// Local Backend
+const API_URL = "http://localhost:5001/api/products";
 
 export const getProducts = async () => {
   const response = await axios.get(API_URL);
@@ -9,20 +9,11 @@ export const getProducts = async () => {
 };
 
 export const createProduct = async (product: any) => {
-  const response = await axios.post(
-    API_URL,
-    product
-  );
-
+  const response = await axios.post(API_URL, product);
   return response.data;
 };
 
-export const deleteProduct = async (
-  id: string
-) => {
-  const response = await axios.delete(
-    `${API_URL}/${id}`
-  );
-
+export const deleteProduct = async (id: string) => {
+  const response = await axios.delete(`${API_URL}/${id}`);
   return response.data;
 };
