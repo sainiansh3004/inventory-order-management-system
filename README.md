@@ -21,7 +21,7 @@ https://inventory-order-management-system-inky-kappa.vercel.app
 
 ### Backend API (Render)
 
-https://inventory-order-management-system-9buf.onrender.com
+https://inventory-order-management-system-0t68.onrender.com
 
 ### GitHub Repository
 
@@ -280,7 +280,7 @@ npm run dev
 
 | Frontend (Vercel) | https://inventory-order-management-system-inky-kappa.vercel.app
 
-| Backend (Render)  | https://inventory-order-management-system-9buf.onrender.com
+| Backend (Render)  | https://inventory-order-management-system-0t68.onrender.com
 
 | Docker Hub        | https://hub.docker.com/r/sainiansh3004/inventory-backend
 
