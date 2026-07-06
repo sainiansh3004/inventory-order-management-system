@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL =
-  "https://inventory-order-management-system-9buf.onrender.com/api/customers";
+  "https://inventory-order-management-system-0t68.onrender.com/api/customers";
 
 export const getCustomers = async () => {
   const response = await axios.get(API_URL);
